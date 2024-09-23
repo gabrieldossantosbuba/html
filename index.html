@@ -1,22 +1,47 @@
-<DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet"href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomes Aleatórios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #resultado {
+            font-size: 24px;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <selection class="section">
-    <div class="slider">
-      <div class="slide">
-        <input type="radio"name="radio-btn"id="radio1" >
-          <img src="athletico 1.png" alt="Athletico Paranaense">
-        <img src="torcida.jpg" alt="torcida">
-      <img src="trofeus[.jpeg" alt="trofeus">
-        <img src="iluminacao-noturna-da arena 2.jpg" alt="arena">
-        <input type="radio"name="radio-btn"id="radio2">
-        <input type="radio"name="radio-btn"id="radio3">
-        <input type="radio"name="radio-btn"id="radio4">
-</body>  
+    <h1>Gerador de Nomes Aleatórios</h1>
+    <div id="resultado">Clique no botão para gerar um nome!</div>
+    <button id="gerarNome">Gerar Nome</button>
+
+    <script>
+        const nomes = ["Ana", "Fernanda", "Maria Eduarda", "Marcelo", "Amanda", "Gustavo", "Gabriel"];
+
+        function aleatorio(lista) {
+            const posicao = Math.floor(Math.random() * lista.length);
+            return lista[posicao];
+        }
+
+        document.getElementById('gerarNome').addEventListener('click', () => {
+            const nomeAleatorio = aleatorio(nomes);
+            document.getElementById('resultado').textContent = Nome Aleatório: ${nomeAleatorio};
+        });
+    </script>
+</body>
+</html>
